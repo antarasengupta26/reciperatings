@@ -24,7 +24,7 @@ The dataset that we are working with in this project is the Recipe and Ratings s
 The data we worked with were given to us in two separate datasets, recipe data and ratings data, as detailed in the previous section. We created a few functions to clean our data. To clean our ratings (interaction) data, we created the clean_interaction() function, which took in the data frame and changed all 0 ratings to NaN values, as the ratings are only meant to be between 1 and 5. Secondly, we changed all the type of all the values in the 'date' column to date time. To clean our recipe data, we created the function clean_recipe(), which renamed the 'id' column to 'recipe_id' for the sake of specificity and also to help us merge it with the interaction dataset in future steps - we also indexed the data frame by this column for the same reason. We also expanded the nutrition column to various different columns (one for each nutritional aspect), in order for us to do further analysis on different nutritional features and their relationships with other features, and also the distribution of them throughout the data. We also dropped the pre-existing nutrition column. We converted the type of values in 'submitted' column to date time. Lastly, we merged the two data frames with our function recipe_with_rating() which merged the two data frames on the recipe id column. We then grouped the data frame by recipe id and added an average rating column which holds the values of average rating for each recipe. 
 
 ```py
-print(recipe.head().to_markdown(index=False))
+print(tabulate(recipe.head().to_markdown(index=False)))
 ```
 
 
