@@ -31,8 +31,11 @@ print(markdown_table)
 
 
 ### Univariate Analysis
+<iframe src="assets/RecipeDistribution.html" width=800 height=600 frameBorder=0></iframe>
 
 ### Bivariate Analysis
+<iframe src="assets/ratingByCuisine.html" width=800 height=600 frameBorder=0></iframe>
+
 
 ### Interesting Aggregates 
 
