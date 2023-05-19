@@ -58,6 +58,12 @@ The rating column is NMAR because sometimes people do not want to leave a rating
 ---
 
 ## Hypothesis Testing
+Main Question: What is the relationship between Indian and Italian cuisine and average rating of their respective recipes?
+Null Hypothesis: In the population,ratings of Italian recipes and indian recipes have the same distribution, and the observed differences in our samples are due to random chance.
+Alternative hypotheses: In the population, italian recipes have higher ratings than indian recipes, on average. The observed difference in our samples cannot be explained by random chance alone.
+Choice of test statistic: Difference in group means
+Choice of significance level: alpha = 0.01 
+Resulting p-value: 0.0413
 
 The main question that we wanted to approach with our hypothesis testing was: Are Italian Recipes rated higher than Indian Recipes? The method we chose for investigating was permutation testing, as we were dealing with figuring out whether two samples, in this case Indian recipes and Italian recipes, come from the same distribution. Our approach involved shuffling group labels under the null in attempts to reject the null hypothesis. 
 
