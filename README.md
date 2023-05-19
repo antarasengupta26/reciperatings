@@ -35,7 +35,7 @@ print(recipe.head().to_markdown(index=False))
 
 The rating column is NMAR because sometimes people do not want to leave a rating. This means that the data itself is the reason for missingness - the people who are leaving the rating column blank simply do so because they have no rating to give. Additional data that might be helpful is the reviews column and also information directly from the reviews section of www.food.com, because we looked through the website and sometimes the ratings that are missing are associated with reviews that are questions or remarks. Therefore, they are not actual reviews of someone who tried the recipe, meaning that they would not even be able to have a valid review. This can make the missingness in the ratings column MAR because the missingness can be dependent on the reviews column. The value in the review column can impact the missingness in the rating column, because if the review is a question and remark instead of a rating based review, then the corresponding value in the rating column may be missing. 
 
-###Missingness Dependency 
+### Missingness Dependency 
 
 
 ---
