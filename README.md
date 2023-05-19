@@ -28,6 +28,7 @@ The data we worked with were given to us in two separate datasets, recipe data a
 markdown_table = recipe.head().to_markdown(index=False)
 print(markdown_table)
 
+
 ```
 
 
