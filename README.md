@@ -34,7 +34,7 @@ print(markdown_table)
 
 ### Univariate Analysis
 
-<iframe src="assets/RecipeDistribution.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assets/RatingDistribution.html" width=800 height=600 frameBorder=0></iframe>
 
 ### Bivariate Analysis
 
