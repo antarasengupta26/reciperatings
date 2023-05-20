@@ -1,7 +1,7 @@
 
 
 
-# Recipe Ratings
+# Recipe Ratings and Analysis
 
 by Antara Sengupta (asengupt@ucsd.edu) and George Chong (gchong@ucsd.edu)
 
@@ -49,6 +49,18 @@ print(recipe.to_markdown())
 
 
 ### Interesting Aggregates 
+
+```py
+
+print(pivot1.to_markdown())
+
+```
+
+| cuisine   |   (-0.001, 146.5] |   (146.5, 248.9] |   (248.9, 370.6] |   (370.6, 563.3] |   (563.3, 45609.0] |
+|:----------|------------------:|-----------------:|-----------------:|-----------------:|-------------------:|
+| indian    |           4.64254 |          4.52866 |          4.59874 |           4.6155 |            4.70294 |
+| italian   |           4.67562 |          4.6511  |          4.65472 |           4.65   |            4.65549 |
+
 
 ---
 
