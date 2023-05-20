@@ -83,7 +83,9 @@ print(pivot2.to_markdown())
 The rating column is NMAR because sometimes people do not want to leave a rating. This means that the data itself is the reason for missingness - the people who are leaving the rating column blank simply do so because they have no rating to give. Additional data that might be helpful is the reviews column and also information directly from the reviews section of www.food.com, because we looked through the website and sometimes the ratings that are missing are associated with reviews that are questions or remarks. Therefore, they are not actual reviews of someone who tried the recipe, meaning that they would not even be able to have a valid review. This can make the missingness in the ratings column MAR because the missingness can be dependent on the reviews column. The value in the review column can impact the missingness in the rating column, because if the review is a question and remark instead of a rating based review, then the corresponding value in the rating column may be missing. 
 
 ### Missingness Dependency 
+<iframe src="assets/ks_ingredients.html" width=800 height=600 frameBorder=0></iframe>
 
+<iframe src="assets/diff_mean_ingredients.html" width=800 height=600 frameBorder=0></iframe>
 
 ---
 
@@ -116,5 +118,7 @@ The method we chose for investigating was permutation testing, as we were dealin
 We built a function has_tag() which takes in a dataframe and a tag, and returns a boolean series based upon whether each recipe has the desired tag. We used this as a mask to extract the desired rows of our dataframe, which in this case were the rows that had ‘Indian’ or ‘Italian’ in the tags column, and created a cuisine column that had three values: ‘Indian’, ‘Italian’, and ‘NaN’ (if it was neither). We dropped the null values in order to only deal with the relevant data, and then ran our permutation test by shuffling the cuisine labels and recalculating the total average rating for Indian and Italian recipes. 
 
 The test statistic that we chose was the difference in group means, as our question attempts to explore if a certain cuisine is rated higher on average than another, and we believe that finding the difference in group means was the most appropriate statistic to calculate in this scenario. Our observed statistic showed that the average rating for Italian recipes were higher than Indian. The significance level we chose was alpha = 0.01. We opted for a signficance level of 0.01 rather 0.05 because we wanted to reduce the likelihood of false positives, which occur with more frequency the larger the signficance level is. After running our permutation test 1500 times, we got a p-value of 0.0413, which is greater than our significance level, meaning that we failed to reject the null hypothesis. That means that in terms of and based on our permutation test, we cannot determine whether Indian and Italian recipes are from different populations. 
+
+<iframe src="assets/permutationplot.html" width=800 height=600 frameBorder=0></iframe>
 
 ---
