@@ -88,18 +88,32 @@ The rating column is NMAR because sometimes people do not want to leave a rating
 ---
 
 ## Hypothesis Testing
-Main Question: What is the relationship between Indian and Italian cuisine and average rating of their respective recipes?
+
+Permutation Test Key Info:
+
+Main Question: What is the relationship between Indian and Italian cuisine and average rating of their respective recipes? *Specifically for this permutation test, we used a more specific question: Are Italian Recipes on average rated higher than Indian Recipes?
+
 Null Hypothesis: In the population,ratings of Italian recipes and indian recipes have the same distribution, and the observed differences in our samples are due to random chance.
+
 Alternative hypotheses: In the population, italian recipes have higher ratings than indian recipes, on average. The observed difference in our samples cannot be explained by random chance alone.
+
 Choice of test statistic: Difference in group means
+
 Choice of significance level: alpha = 0.01 
+
 Resulting p-value: 0.0413
 
-The main question that we wanted to approach with our hypothesis testing was: Are Italian Recipes rated higher than Indian Recipes? The method we chose for investigating was permutation testing, as we were dealing with figuring out whether two samples, in this case Indian recipes and Italian recipes, come from the same distribution. Our approach involved shuffling group labels under the null in attempts to reject the null hypothesis. 
+
+Process Details & Findings 
+
+The main question that we explored throughout our project was: What is the relationship between Indian and Italian cuisine and average rating of their respective recipes? 
+
+However, when it came to conducting our permutation test, we wanted to be very specific, so we went with an even more precise question: Are Italian Recipes on average rated higher than Indian Recipes? We chose to do this as we believd that while our main question was very important in all of exploratory analysis we did, we wanted to study a specific instance that was encompassed within our main question. While our main question studies the relationship between the recipes of two popular cuisinses and their ratings, our hypothesis test is based upon our observed statistic, which is that Italian recipes are rated higher than Indian recipes. We wanted to explore this phenomenon further, which is why we based our hypothesis test off of a specific instance in the relationship between the average ratings of Indian and Italian cuisine. 
+
+The method we chose for investigating was permutation testing, as we were dealing with figuring out whether two samples, in this case Indian recipes and Italian recipes, come from the same distribution. Our approach involved shuffling group labels under the null in attempts to reject the null hypothesis. 
 
 We built a function has_tag() which takes in a dataframe and a tag, and returns a boolean series based upon whether each recipe has the desired tag. We used this as a mask to extract the desired rows of our dataframe, which in this case were the rows that had ‘Indian’ or ‘Italian’ in the tags column, and created a cuisine column that had three values: ‘Indian’, ‘Italian’, and ‘NaN’ (if it was neither). We dropped the null values in order to only deal with the relevant data, and then ran our permutation test by shuffling the cuisine labels and recalculating the total average rating for Indian and Italian recipes. 
 
-The test statistic that we chose was the difference in group means, as our question attempts to explore if a certain cuisine is rated higher on average than another, and we believe that finding the difference in group means was the most appropriate statistic to calculate in this scenario. Our observed statistic showed that the average rating for Italian recipes were higher than Indian. The significance level we chose was alpha = 0.01. After running our permutation test 1500 times, we got a p-value of 0.0413, which is greater than our significance level, meaning that we failed to reject the null hypothesis. That means that in terms of our permutation test, we cannot determine whether Indian and Italian recipes are from different populations. 
-
+The test statistic that we chose was the difference in group means, as our question attempts to explore if a certain cuisine is rated higher on average than another, and we believe that finding the difference in group means was the most appropriate statistic to calculate in this scenario. Our observed statistic showed that the average rating for Italian recipes were higher than Indian. The significance level we chose was alpha = 0.01. After running our permutation test 1500 times, we got a p-value of 0.0413, which is greater than our significance level, meaning that we failed to reject the null hypothesis. That means that in terms of and based on our permutation test, we cannot determine whether Indian and Italian recipes are from different populations. 
 
 ---
