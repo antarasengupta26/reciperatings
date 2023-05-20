@@ -41,9 +41,13 @@ print(recipe.to_markdown())
 
 ### Univariate Analysis
 
+In the plot below, we are observing the distribution of average ratings across all recipes in our dataset. We can see a trend of increased amount of ratings for high rating values (ratings are on a scale of 1 to 5), and we can see the most common rating by far is 5, followed by 4, and decreasing after. 
+
 <iframe src="assets/RatingDistribution.html" width=800 height=600 frameBorder=0></iframe>
 
 ### Bivariate Analysis
+
+In the plot below, we are observing the distribution of average rating of recipes based on cuisine - Indian or Italian. It is visible that the ratings of the two cuisine follow a similar pattern, where there is a trend of higher proportion of ratings for high rating values (ratings are on a scale of 1 to 5), and we can see the most common ratings for both cuisines lie close 5.  
 
 <iframe src="assets/ratingByCuisine.html" width=800 height=600 frameBorder=0></iframe>
 
