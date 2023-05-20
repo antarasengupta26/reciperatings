@@ -25,7 +25,7 @@ The data we worked with were given to us in two separate datasets, recipe data a
 
 ```py
 
-print(recipe.to_markdown())
+print(recipe.head().to_markdown())
 
 ```
 
@@ -93,14 +93,18 @@ print(pivot2.to_markdown())
 
 ### NMAR Analysis
 
-The rating column is NMAR because sometimes people do not want to leave a rating. This means that the data itself is the reason for missingness - the people who are leaving the rating column blank simply do so because they have no rating to give. Additional data that might be helpful is the reviews column and also information directly from the reviews section of www.food.com, because we looked through the website and sometimes the ratings that are missing are associated with reviews that are questions or remarks. Therefore, they are not actual reviews of someone who tried the recipe, meaning that they would not even be able to have a valid review. This can make the missingness in the ratings column MAR because the missingness can be dependent on the reviews column. The value in the review column can impact the missingness in the rating column, because if the review is a question and remark instead of a rating based review, then the corresponding value in the rating column may be missing. 
+A column that we observed to have NMAR misisness was the rating column. The rating column is NMAR because sometimes people do not want to leave a rating. Therefore, this means that the value itself is the reason for missingness - the people who are leaving the rating column blank simply do so because they have no rating to give. Additional data that might be helpful is the reviews column and also information directly from the reviews section of www.food.com, because we looked through the website and sometimes the ratings that are missing are associated with reviews that are questions or remarks. Therefore, they are not actual reviews of someone who tried the recipe, meaning that they would not even be able to have a valid review. This can make the missingness in the ratings column MAR because the missingness can be dependent on the reviews column. The value in the review column can impact the missingness in the rating column, because if the review is a question and remark instead of a rating based review, then the corresponding value in the rating column may be missing. 
 
 ### Missingness Dependency 
 
-<iframe src="assets/ks_ingredients.html" width=800 height=600 frameBorder=0></iframe>
+For missingness dependency analysis, we focused on the missing values in the average rating column. In order to determine the missingness of the values in the average rating column, we initially attributed the missing values to being NMAR, which means that missingness of the rating depended on the rating itself. However, when looking upon more data and through the information on www.food.com , we saw that the missingness is not NMAR because there is a chance that the recipe could be very good but does not get a rating because it is newly uploaded, but also could have no ratings because it was an unpopular/disliked recipe. We ran a permutation test between the average rating column with and without missing values and with other columns, with a significance level of alpha = 0.05. We used the two sample K-S test as our chosen test statistic because when we plotted the distributions of the average rating column and the n_ingredients column, they were centered around the same mean. When running our permutation test, we found that the n_ingredients column (specifying number of ingredients needed for each recipe) had statistically significant results, meaning that the average rating column had missingness dependency on the # of the ingredients column. This finding suggests that we cannot just drop all NaN values in our data frame and we have to imputate it because the missing values are dependent on another column therefore they are not MCAR. 
+
+Our plot below shows the empirical distribution of our test statistic when running the permutation test exploring the missingness dependency between the average rating and # of ingredients columns. 
+
 
 
 <iframe src="assets/diff_mean_ingredients.html" width=800 height=600 frameBorder=0></iframe>
+
 
 
 ---
