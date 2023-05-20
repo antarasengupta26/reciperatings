@@ -25,7 +25,7 @@ The data we worked with were given to us in two separate datasets, recipe data a
 
 ```py
 
-print(recipe.head().to_markdown())
+print(recipe.to_markdown())
 
 ```
 
