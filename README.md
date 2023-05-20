@@ -50,6 +50,10 @@ print(recipe.to_markdown())
 
 ### Interesting Aggregates 
 
+Pivot Table #1 
+
+In the table below, we are observing the distribution of ratings for each cuisine depending on the caloric amount of each recipe. We have binned the calories column to observe the differences in rating between different ranges of caloric value. As our main question explores the relationship between Indian and Italian recipes and their average ratings, this aggregation is signficant as we are analyzing different factors and contributors to differences in ratings between the recipes of the two cuisines. Here we are observing if the relationship between amount of calories in a recipe and average ratings grouped by cuisine to see if caloric amount impacts rating values between our cuisines of focus. For Indian cuisine, we can see that recipes that are on really high or low end of the calorie spectrum tend to be rated slightly higher than those in the middle. We did not observe anything too significant in regards to patterns in the Italian cuisine row. 
+
 ```py
 
 print(pivot1.to_markdown())
@@ -60,6 +64,11 @@ print(pivot1.to_markdown())
 |:----------|------------------:|-----------------:|-----------------:|-----------------:|-------------------:|
 | indian    |           4.64254 |          4.52866 |          4.59874 |           4.6155 |            4.70294 |
 | italian   |           4.67562 |          4.6511  |          4.65472 |           4.65   |            4.65549 |
+
+
+Pivot Table #2
+
+In the table below, we are observing the distribution of ratings for each cuisine depending on number for ingredients for each recipe. We have binned the n_ingredients column to observe the differences in rating between different ranges of ingredient amount. As our main question explores the relationship between Indian and Italian recipes and their average ratings, this aggregation is signficant as we are analyzing different factors and contributors to differences in ratings between the recipes of the two cuisines. Here we are observing if the relationship between amount of ingredients in a recipe and average ratings grouped by cuisine to see if ingredient amount impacts rating values between our cuisines of focus. For Indian cuisine, we can see that there s a slight decrease in rating as number of ingredients increase, however, this is variable and not constantly decreasing, so we did not observe any significant trend or pattern. None was observed for Italian cuisine either. 
 
 
 ```py
